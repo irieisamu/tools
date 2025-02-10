@@ -2,50 +2,50 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>2グループラジオカード選択アプリ</title>
+    <title>日本酒選択アプリ</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>2グループラジオカード選択アプリ</h1>
+    <h1>日本酒選択アプリ</h1>
     <form id="radio-form">
         <div id="group1">
-            <h3>グループ1</h3>
+            <h3>日本酒の種類</h3>
             <div class="radio-group">
-                <label class="radio-card" data-group="option1" data-value="オプション1-1">
-                    <input type="radio" name="option1" value="オプション1-1">
-                    オプション1-1
+                <label class="radio-card" data-group="option1" data-value="吟醸酒">
+                    <input type="radio" name="option1" value="吟醸酒">
+                    吟醸酒
                 </label>
-                <label class="radio-card" data-group="option1" data-value="オプション1-2">
-                    <input type="radio" name="option1" value="オプション1-2">
-                    オプション1-2
+                <label class="radio-card" data-group="option1" data-value="純米酒">
+                    <input type="radio" name="option1" value="純米酒">
+                    純米酒
                 </label>
-                <label class="radio-card" data-group="option1" data-value="オプション1-3">
-                    <input type="radio" name="option1" value="オプション1-3">
-                    オプション1-3
+                <label class="radio-card" data-group="option1" data-value="本醸造酒">
+                    <input type="radio" name="option1" value="本醸造酒">
+                    本醸造酒
                 </label>
             </div>
         </div>
         
         <div id="group2">
-            <h3>グループ2</h3>
+            <h3>日本酒度（甘口・辛口）</h3>
             <div class="radio-group">
-                <label class="radio-card" data-group="option2" data-value="オプション2-1">
-                    <input type="radio" name="option2" value="オプション2-1">
-                    オプション2-1
+                <label class="radio-card" data-group="option2" data-value="甘口">
+                    <input type="radio" name="option2" value="甘口">
+                    甘口
                 </label>
-                <label class="radio-card" data-group="option2" data-value="オプション2-2">
-                    <input type="radio" name="option2" value="オプション2-2">
-                    オプション2-2
+                <label class="radio-card" data-group="option2" data-value="やや甘口">
+                    <input type="radio" name="option2" value="やや甘口">
+                    やや甘口
                 </label>
-                <label class="radio-card" data-group="option2" data-value="オプション2-3">
-                    <input type="radio" name="option2" value="オプション2-3">
-                    オプション2-3
+                <label class="radio-card" data-group="option2" data-value="辛口">
+                    <input type="radio" name="option2" value="辛口">
+                    辛口
                 </label>
             </div>
         </div>
         
-        <button type="submit">送信</button>
+        <button type="submit">選択を確定</button>
     </form>
     <div id="result"></div>
 
