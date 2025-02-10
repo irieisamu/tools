@@ -1,50 +1,24 @@
-/* コンテナの幅を1200pxに固定 */
-.container {
-    width: 1200px;
-    margin: 0 auto; /* 中央寄せ */
+.radio-group {
     display: flex;
-    gap: 20px; /* 各テキストエリアの間隔 */
-    align-items: stretch; /* 縦の高さを揃える */
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
 }
-
-.radio-container {
-    margin-bottom: 15px;
-}
-
-/* 横並びのテキストエリアのスタイル */
-.textarea {
-    height: 250px;  /* 縦幅を同じにする */
-    max-width: 380px;  /* テキストエリアの最大幅を設定 */
-    padding: 10px; /* 内側の余白 */
-    font-size: 16px; /* フォントサイズ */
-    border: 1px solid #ccc; /* 枠線 */
-    border-radius: 5px; /* 角丸 */
-}
-
-.textarea_reason {
+.radio-card {
+    width: 100px;
     height: 100px;
-}
-
-/* 2つ目のtextareaを縦に並べるためのコンテナ */
-.vertical-container {
+    border: 2px solid #ccc;
+    border-radius: 5px;
     display: flex;
-    flex-direction: column; /* 縦並び */
-    gap: 5px; /* 2つのテキストエリアの間隔 */
-    width: 380px;  /* 縦並びのエリアの幅を固定 */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-
-p {
-    max-width: 380px;  /* 固定の幅を指定 */
+.radio-card.selected {
+    background-color: #e0e0e0;
+    border-color: #007bff;
 }
-
-button {
-    display: block;
-    width: 100%;
+input[type="radio"] {
+    display: none;
 }
-
-label {
-    display: block;
-}
-
-
-
