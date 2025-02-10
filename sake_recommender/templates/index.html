@@ -2,15 +2,26 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>ラジオボタン選択アプリ</title>
+    <title>2グループラジオボタン選択アプリ</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <h1>ラジオボタン選択アプリ</h1>
+    <h1>2グループラジオボタン選択アプリ</h1>
     <form id="radio-form">
-        <input type="radio" name="option" value="オプション1"> オプション1<br>
-        <input type="radio" name="option" value="オプション2"> オプション2<br>
-        <input type="radio" name="option" value="オプション3"> オプション3<br>
+        <div id="group1">
+            <h3>グループ1</h3>
+            <input type="radio" name="option1" value="オプション1-1"> オプション1-1<br>
+            <input type="radio" name="option1" value="オプション1-2"> オプション1-2<br>
+            <input type="radio" name="option1" value="オプション1-3"> オプション1-3<br>
+        </div>
+        
+        <div id="group2">
+            <h3>グループ2</h3>
+            <input type="radio" name="option2" value="オプション2-1"> オプション2-1<br>
+            <input type="radio" name="option2" value="オプション2-2"> オプション2-2<br>
+            <input type="radio" name="option2" value="オプション2-3"> オプション2-3<br>
+        </div>
+        
         <button type="submit">送信</button>
     </form>
     <div id="result"></div>
@@ -19,19 +30,17 @@
     $(document).ready(function() {
         $('#radio-form').submit(function(e) {
             e.preventDefault();
-            var selection = $('input[name=option]:checked').val();
-            if (selection) {
-                $.ajax({
-                    url: '/submit',
-                    type: 'POST',
-                    data: {option: selection},
-                    success: function(response) {
-                        $('#result').text(response.result);
-                    }
-                });
-            } else {
-                $('#result').text('オプションを選択してください。');
-            }
+            var option1 = $('input[name=option1]:checked').val() || 'なし';
+            var option2 = $('input[name=option2]:checked').val() || 'なし';
+            
+            $.ajax({
+                url: '/submit',
+                type: 'POST',
+                data: {option1: option1, option2: option2},
+                success: function(response) {
+                    $('#result').text(response.result);
+                }
+            });
         });
     });
     </script>
