@@ -1,0 +1,50 @@
+/* コンテナの幅を1200pxに固定 */
+.container {
+    width: 1200px;
+    margin: 0 auto; /* 中央寄せ */
+    display: flex;
+    gap: 20px; /* 各テキストエリアの間隔 */
+    align-items: stretch; /* 縦の高さを揃える */
+}
+
+.radio-container {
+    margin-bottom: 15px;
+}
+
+/* 横並びのテキストエリアのスタイル */
+.textarea {
+    height: 250px;  /* 縦幅を同じにする */
+    max-width: 380px;  /* テキストエリアの最大幅を設定 */
+    padding: 10px; /* 内側の余白 */
+    font-size: 16px; /* フォントサイズ */
+    border: 1px solid #ccc; /* 枠線 */
+    border-radius: 5px; /* 角丸 */
+}
+
+.textarea_reason {
+    height: 100px;
+}
+
+/* 2つ目のtextareaを縦に並べるためのコンテナ */
+.vertical-container {
+    display: flex;
+    flex-direction: column; /* 縦並び */
+    gap: 5px; /* 2つのテキストエリアの間隔 */
+    width: 380px;  /* 縦並びのエリアの幅を固定 */
+}
+
+p {
+    max-width: 380px;  /* 固定の幅を指定 */
+}
+
+button {
+    display: block;
+    width: 100%;
+}
+
+label {
+    display: block;
+}
+
+
+

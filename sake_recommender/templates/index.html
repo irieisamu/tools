@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ラジオボタン選択アプリ</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>ラジオボタン選択アプリ</h1>
+    <form id="radio-form">
+        <input type="radio" name="option" value="オプション1"> オプション1<br>
+        <input type="radio" name="option" value="オプション2"> オプション2<br>
+        <input type="radio" name="option" value="オプション3"> オプション3<br>
+        <button type="submit">送信</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+    $(document).ready(function() {
+        $('#radio-form').submit(function(e) {
+            e.preventDefault();
+            var selection = $('input[name=option]:checked').val();
+            if (selection) {
+                $.ajax({
+                    url: '/submit',
+                    type: 'POST',
+                    data: {option: selection},
+                    success: function(response) {
+                        $('#result').text(response.result);
+                    }
+                });
+            } else {
+                $('#result').text('オプションを選択してください。');
+            }
+        });
+    });
+    </script>
+</body>
+</html>
