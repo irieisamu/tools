@@ -68,7 +68,7 @@
                 type: 'POST',
                 data: {option1: option1, option2: option2},
                 success: function(response) {
-                    $('#result').text(response.result);
+                    $('#result').html(response.result.replace(/\n/g, '<br>'));
                 }
             });
         });
